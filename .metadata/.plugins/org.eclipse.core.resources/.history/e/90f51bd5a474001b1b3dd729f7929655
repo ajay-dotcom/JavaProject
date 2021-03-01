@@ -1,0 +1,31 @@
+package com.web.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+import com.web.service.AuthService;
+
+@RestController
+
+public class ProfieRestApi {
+	
+	
+	@Autowired
+	private AuthService authService;
+	
+	@GetMapping("/Signups")
+	
+	public String showSignup (Model model) {
+		
+		List<ProfileDTO> profileDTOs = authService.findAll();
+	
+		model.addAttribute("happy", profileDTOs);
+		return "Signups" ;
+		
+		
+	}
+
+}

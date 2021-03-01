@@ -1,0 +1,15 @@
+#This is the main file where spring boot takes all its input.
+
+spring.mvc.view.prefix=/
+spring.mvc.view.suffix=.jsp
+
+
+#Db configuration
+
+spring.datasource.url =jdbc:mysql://192.168.1.4:3306/rab3900_db
+spring.datasource.username= root
+spring.datasource.password = liverpool
+
+
+
+server.port=8081

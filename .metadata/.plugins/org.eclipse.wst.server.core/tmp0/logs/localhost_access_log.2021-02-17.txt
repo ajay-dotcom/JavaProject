@@ -1,0 +1,6 @@
+127.0.0.1 - - [17/Feb/2021:10:31:24 -0500] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [17/Feb/2021:10:31:30 -0500] "GET /login-mvc-tech/ HTTP/1.1" 200 2320
+0:0:0:0:0:0:0:1 - - [17/Feb/2021:10:31:30 -0500] "GET /login-mvc-tech/img/login.png HTTP/1.1" 200 4107
+0:0:0:0:0:0:0:1 - - [17/Feb/2021:10:31:30 -0500] "GET /login-mvc-tech/img/jcoker.png HTTP/1.1" 200 5818
+0:0:0:0:0:0:0:1 - - [17/Feb/2021:10:33:03 -0500] "GET /login-mvc-tech/gsignup.jsp HTTP/1.1" 200 2441
+0:0:0:0:0:0:0:1 - - [17/Feb/2021:10:34:14 -0500] "POST /login-mvc-tech/signup HTTP/1.1" 500 8338

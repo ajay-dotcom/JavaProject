@@ -1,0 +1,38 @@
+package com.web.dao;
+
+import javax.sql.DataSource;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+//
+@Configuration
+public class DatabaseConfiguration {
+	
+	//@Bean
+	@Bean //what ever object is return from this method 
+	//?? what is id of this bean ->>> same as method name =createDataSource
+	public DataSource createDataSource(){
+		DriverManagerDataSource dataSource=new DriverManagerDataSource();
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/rab3900_db");
+		dataSource.setUsername("root");
+		dataSource.setPassword("mysql@1234");
+		return dataSource;
+		/*<bean id = "ahadataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
+		   <property name = "driverClassName" value = "com.mysql.jdbc.Driver"/>
+		   <property name = "url" value = "jdbc:mysql://localhost:3306/rab3900_db"/>
+		   <property name = "username" value = "root"/>
+		   <property name = "password" value = "mysql@1234"/>
+		</bean>*/
+	}
+	
+	@Bean
+	public JdbcTemplate createJdbcTemplate(){
+		JdbcTemplate jdbcTemplate=new JdbcTemplate(this.createDataSource());
+		return jdbcTemplate;
+	}
+
+}
